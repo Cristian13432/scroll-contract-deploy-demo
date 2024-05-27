@@ -1,16 +1,33 @@
+# Default profile configuration
 [profile.default]
+# Enable or disable the Foreign Function Interface (FFI)
 ffi = false
+
+# Number of fuzzing runs
 fuzz_runs = 256
+
+# Enable or disable the optimizer
 optimizer = true
-optimizer_runs = 1000000
+
+# Number of optimizer runs
+optimizer_runs = 1_000_000
+
+# Remappings for importing dependencies
 remappings = [
   "solmate/=lib/solmate/src/",
   "forge-std/=lib/forge-std/src/"
 ]
+
+# Verbosity level of the output
 verbosity = 1
+
+# EVM version to target
 evm_version = "london"
 
-# Extreme Fuzzing CI Profile :P
+# Configuration for CI with extreme fuzzing settings
 [profile.ci]
+# Increase the number of fuzzing runs for CI
 fuzz_runs = 100_000
+
+# Increase verbosity for more detailed output in CI
 verbosity = 4
